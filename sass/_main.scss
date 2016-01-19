@@ -152,7 +152,7 @@ input {
 }
 
 .footer{
-  @include set(height, $sm-up: 20rem, $lg-up: 7rem, $lg-l-up: 5rem);
+  @include set(height, $sm-up: 15rem, $lg-up: 7rem, $lg-l-up: 5rem);
 
   position: relative;
   display: block;
@@ -164,7 +164,7 @@ input {
   }
 
   left-block, right-block{
-    @include set(width, $sm-up: auto, $lg-l-up: 45%);
+    @include set(width, $sm-up: 80%, $lg-up: auto, $lg-l-up: 45%);
     display: block;
     margin: 0 10%;
     height: auto;
@@ -178,7 +178,7 @@ input {
   left-block{
     @include set(float, $sm-up: right, $lg-l-up: left);
     a{
-      @include set(float, $sm-up: none, $lg-l-up: right);
+      @include set(float, $sm-up: none, $lg-up: right);
     }
   }
   right-block{
@@ -233,7 +233,7 @@ input {
   .social{
     line-height: 3.4rem;
     height: 3.4rem;
-    width: 3.5rem;
+    @include set(width, $sm-up: 23%, $lg-up: 3.5rem);
     display: inline-block;
     position: relative;
     .icon {
