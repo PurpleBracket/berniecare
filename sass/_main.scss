@@ -1,10 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300|Lora:400,700);
-
+html,body{
+  height: auto;
+  width: auto;
+  display: block;
+}
 #body {
   @include set(background-position, $sm-up: bottom right, $lg-l-up: bottom right);
   @include set(background-size, $sm-up: cover, $lg-l-up: cover);
   @include set(background-image, $sm-up: url(../imgs/bernie-sanders-portrait-03-crop.jpg), $lg-l-up: url(../imgs/bernie-sanders-portrait-03.jpg));
-
   margin: 0;
   height: 100%;
   min-height: 100vh;
@@ -149,22 +152,21 @@ input {
 }
 
 .footer{
-  position: absolute;
-  bottom: 0%;
+  @include set(height, $sm-up: 20rem, $lg-up: 7rem, $lg-l-up: 5rem);
+
+  position: relative;
   display: block;
   width: 90%;
   left: 5%;
-  height: 10rem;
   @media screen and (min-width: 1024px){
-    height: 5rem;
+    position: absolute;
+    bottom: 0%;
   }
 
   left-block, right-block{
-    @include set(margin-bottom, $sm-up: 4rem, $lg-up: 0);
     @include set(width, $sm-up: auto, $lg-l-up: 45%);
-
     display: block;
-    margin: 0 5%;
+    margin: 0 10%;
     height: auto;
     position: relative;
     @media screen and (min-width: 1024px){
@@ -176,35 +178,46 @@ input {
   left-block{
     @include set(float, $sm-up: right, $lg-l-up: left);
     a{
-      @include set(float, $sm-up: left, $lg-l-up: right);
+      @include set(float, $sm-up: none, $lg-l-up: right);
     }
   }
   right-block{
     @include set(float, $sm-up: right);
-    margin-bottom: 1rem;
+    @include set(margin-bottom, $sm-up: 1rem, $lg-l-up: 0);
+    @include set(margin-top, $sm-up: 1rem, $lg-l-up: 0);
+
+    h4{
+      @include set(float, $lg-up: left);
+      @include set(width, $sm-up: 70%, $lg-up: auto);
+      @include set(margin, $sm-up: 0 auto, $lg-up: 0);
+      @include set(display, $sm-up: block, $lg-up: inline-block);
+      text-align: center;
+      font-size: 0.9rem;
+      font-family: "lora", serif;
+      font-weight: 300;
+      letter-spacing: 0.01rem;
+      line-height: 2rem;
+      height: 2rem;
+      padding: 0.5rem;
+      border: 1px solid white;
+      color: white;
+    }
+    img{
+      @include set(float, $lg-up: left);
+      @include set(width, $sm-up: 70%, $lg-up: auto);
+      @include set(height, $sm-up: auto, $lg-up: 2rem);
+      @include set(margin, $sm-up: 0 auto, $lg-up: 0);
+      @include set(display, $sm-up: block, $lg-up: inline-block);
+      margin-top: 0.5rem !important;
+      margin-left: 0.25rem;
+    }
   }
-  h4{
-    display: inline-block;
-    font-size: 0.9rem;
-    font-family: "lora", serif;
-    font-weight: 300;
-    letter-spacing: 0.01rem;
-    line-height: 2rem;
-    height: 2rem;
-    padding: 0.5rem;
-    border: 1px solid white;
-    color: white;
-    margin: 0;
-  }
-  img{
-    @include set(float, $sm-up: right);
-    display: inline-block;
-    height: 2rem;
-    width: auto;
-    margin-top: 0.5rem;
-    margin-left: 0.25rem;
-  }
-  #contribute{
+
+  a#contribute{
+    @include set(width, $sm-up: 70%, $lg-up: auto);
+    @include set(margin, $sm-up: 0 auto, $lg-up: 0);
+    @include set(display, $sm-up: block, $lg-up: inline-block);
+    text-align: center;
     color: white;
     font-size: 1.2rem;
     font-family: "Lato", sans-serif;
@@ -212,10 +225,8 @@ input {
     letter-spacing: 0.01rem;
     line-height: 2rem;
     height: 2rem;
-    margin: 0 0.35rem;
     padding: 0.7rem 1.35rem;
     background: #EA504E;
-    display: inline-block;
     text-decoration: none;
   }
 
