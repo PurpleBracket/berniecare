@@ -443,8 +443,8 @@ th {
  * @description: A Simple Mixin Tooltip CSS Using Sass
  * @version: 1.0.5
  */
-/* line 78, ../sass/_mixins.scss */
-#overlay, .intro, #widget, .social .icon {
+/* line 44, ../sass/_mixins.scss */
+#overlay, .intro, #widget, .footer .social .icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -460,13 +460,46 @@ th {
   font-size: 16px;
   display: block;
   position: relative;
-  background: url(../imgs/bernie-sanders-portrait-03.jpg);
-  background-position: bottom right;
-  background-size: cover;
   background-repeat: no-repeat;
 }
+@media only screen {
+  /* line 3, ../sass/_main.scss */
+  #body {
+    background-position: bottom right;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 3, ../sass/_main.scss */
+  #body {
+    background-position: bottom right;
+  }
+}
+@media only screen {
+  /* line 3, ../sass/_main.scss */
+  #body {
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 3, ../sass/_main.scss */
+  #body {
+    background-size: cover;
+  }
+}
+@media only screen {
+  /* line 3, ../sass/_main.scss */
+  #body {
+    background-image: url(../imgs/bernie-sanders-portrait-03-crop.jpg);
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 3, ../sass/_main.scss */
+  #body {
+    background-image: url(../imgs/bernie-sanders-portrait-03.jpg);
+  }
+}
 
-/* line 16, ../sass/_main.scss */
+/* line 17, ../sass/_main.scss */
 #overlay {
   background: rgba(8, 126, 215, 0.25);
   display: block;
@@ -474,99 +507,124 @@ th {
   height: 100%;
 }
 
-/* line 24, ../sass/_main.scss */
+/* line 25, ../sass/_main.scss */
 .intro {
   color: #FFFFFF;
-  width: 90%;
   margin: 0 auto;
   position: relative;
   top: 0;
   left: 0;
   transform: translate(0, 0);
   position: relative;
-  padding-top: 2rem;
 }
-/* line 35, ../sass/_main.scss */
+@media only screen {
+  /* line 25, ../sass/_main.scss */
+  .intro {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 25, ../sass/_main.scss */
+  .intro {
+    width: 40%;
+  }
+}
+@media only screen {
+  /* line 25, ../sass/_main.scss */
+  .intro {
+    padding-top: 1rem;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 25, ../sass/_main.scss */
+  .intro {
+    padding-top: 20rem;
+  }
+}
+@media only screen {
+  /* line 25, ../sass/_main.scss */
+  .intro {
+    padding-bottom: 0.5rem;
+  }
+}
+@media only screen and (min-width: 46.163em) {
+  /* line 25, ../sass/_main.scss */
+  .intro {
+    padding-bottom: 0;
+  }
+}
+/* line 38, ../sass/_main.scss */
 .intro h1 {
   width: 100%;
   display: inline-block;
   font-family: "Lora", serif;
-  font-weight: 400;
-  text-align: center;
-  margin: 0;
+  font-weight: 300;
 }
 @media only screen {
-  /* line 35, ../sass/_main.scss */
+  /* line 38, ../sass/_main.scss */
   .intro h1 {
     font-size: 1.5rem;
   }
 }
-@media only screen and (min-width: lower-bound(46.163em, 64em)) {
-  /* line 35, ../sass/_main.scss */
+@media only screen and (min-width: 21.313em) {
+  /* line 38, ../sass/_main.scss */
   .intro h1 {
     font-size: 2.5rem;
   }
 }
-/* line 43, ../sass/_main.scss */
+@media only screen and (min-width: 46.163em) {
+  /* line 38, ../sass/_main.scss */
+  .intro h1 {
+    font-size: 2.75rem;
+  }
+}
+@media only screen {
+  /* line 38, ../sass/_main.scss */
+  .intro h1 {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 46.163em) {
+  /* line 38, ../sass/_main.scss */
+  .intro h1 {
+    text-align: right;
+  }
+}
+/* line 45, ../sass/_main.scss */
 .intro h1 span {
   display: block;
+  font-weight: 400;
 }
 @media only screen {
-  /* line 43, ../sass/_main.scss */
+  /* line 45, ../sass/_main.scss */
   .intro h1 span {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
-@media only screen and (min-width: lower-bound(46.163em, 64em)) {
-  /* line 43, ../sass/_main.scss */
+@media only screen and (min-width: 21.313em) {
+  /* line 45, ../sass/_main.scss */
   .intro h1 span {
-    font-size: 3.75rem;
+    font-size: 3.5rem;
   }
 }
-/* line 48, ../sass/_main.scss */
-.intro p {
-  display: inline-block;
-  text-align: left;
-  font-family: "Lato", serif;
-  font-weight: 300;
-  letter-spacing: 0.01rem;
-  line-height: 1.5;
-  margin: 0;
-  margin-bottom: 2rem;
-  margin-top: 0.75rem;
-}
-@media only screen {
-  /* line 48, ../sass/_main.scss */
-  .intro p {
-    font-size: 1rem;
-  }
-}
-@media only screen and (min-width: lower-bound(46.163em, 64em)) {
-  /* line 48, ../sass/_main.scss */
-  .intro p {
-    font-size: 1.55rem;
+@media only screen and (min-width: 46.163em) {
+  /* line 45, ../sass/_main.scss */
+  .intro h1 span {
+    font-size: 4.25rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 24, ../sass/_main.scss */
+  /* line 25, ../sass/_main.scss */
   .intro {
-    padding-top: 15rem;
     transform: translate(-50%, -50%);
     top: 45%;
     left: 25%;
     position: absolute;
-    width: 40%;
     margin: 0;
-  }
-  /* line 69, ../sass/_main.scss */
-  .intro h1, .intro p {
-    text-align: right;
-    padding-top: 0rem;
-    margin-bottom: 0rem;
   }
 }
 
-/* line 78, ../sass/_main.scss */
+/* line 60, ../sass/_main.scss */
 #widget {
   position: relative;
   top: 0;
@@ -580,22 +638,32 @@ th {
   height: auto;
   padding: 1.5rem;
   border-radius: 4px;
-  width: 80%;
   margin: 0 auto;
   position: relative;
 }
+@media only screen {
+  /* line 60, ../sass/_main.scss */
+  #widget {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 60, ../sass/_main.scss */
+  #widget {
+    width: 40%;
+  }
+}
 @media screen and (min-width: 1024px) {
-  /* line 78, ../sass/_main.scss */
+  /* line 60, ../sass/_main.scss */
   #widget {
     transform: translate(-50%, -50%);
     position: absolute;
     top: 45%;
     left: 70%;
-    width: 40%;
     margin: 0;
   }
 }
-/* line 105, ../sass/_main.scss */
+/* line 85, ../sass/_main.scss */
 #widget #logo {
   max-width: 35%;
   width: 100%;
@@ -603,13 +671,35 @@ th {
   max-height: 20%;
   margin-bottom: 1rem;
 }
+/* line 92, ../sass/_main.scss */
+#widget p {
+  display: inline-block;
+  text-align: center;
+  font-family: "Lato", serif;
+  font-weight: 300;
+  letter-spacing: 0.01rem;
+  line-height: 1.5;
+  margin: 0;
+}
+@media only screen {
+  /* line 92, ../sass/_main.scss */
+  #widget p {
+    font-size: 1.35rem;
+  }
+}
+@media only screen and (min-width: 46.163em) {
+  /* line 92, ../sass/_main.scss */
+  #widget p {
+    font-size: 1.75rem;
+  }
+}
 
-/* line 114, ../sass/_main.scss */
+/* line 104, ../sass/_main.scss */
 label {
   text-align: left;
 }
 
-/* line 117, ../sass/_main.scss */
+/* line 107, ../sass/_main.scss */
 .inputArea {
   display: block;
   margin: 16px auto;
@@ -617,7 +707,7 @@ label {
   max-width: 256px;
 }
 
-/* line 124, ../sass/_main.scss */
+/* line 114, ../sass/_main.scss */
 input {
   padding: 12px 16px;
   border: 0;
@@ -630,7 +720,7 @@ input {
   font: inherit;
 }
 
-/* line 136, ../sass/_main.scss */
+/* line 126, ../sass/_main.scss */
 .dollarSign {
   position: absolute;
   left: 7px;
@@ -638,13 +728,13 @@ input {
   color: black;
 }
 
-/* line 143, ../sass/_main.scss */
+/* line 133, ../sass/_main.scss */
 .savings, .costs {
   font-size: 2rem;
   font-weight: lighter;
 }
 
-/* line 148, ../sass/_main.scss */
+/* line 138, ../sass/_main.scss */
 .savings {
   font-size: 2.75rem;
   font-family: "Lato", sans-serif;
@@ -652,58 +742,102 @@ input {
   letter-spacing: 0.01rem;
   line-height: 1.2;
 }
-/* line 154, ../sass/_main.scss */
+/* line 144, ../sass/_main.scss */
 .savings span:nth-of-type(3) {
   display: block;
   font-size: 1.25rem;
   margin: 0;
 }
 
-/* line 161, ../sass/_main.scss */
+/* line 151, ../sass/_main.scss */
 .footer {
   position: absolute;
   bottom: 0%;
   display: block;
-  width: 100%;
+  width: 90%;
+  left: 5%;
   height: 10rem;
 }
 @media screen and (min-width: 1024px) {
-  /* line 161, ../sass/_main.scss */
+  /* line 151, ../sass/_main.scss */
   .footer {
     height: 5rem;
   }
 }
-/* line 171, ../sass/_main.scss */
+/* line 162, ../sass/_main.scss */
 .footer left-block, .footer right-block {
   display: block;
-  width: 80%;
-  margin: 0 10%;
+  margin: 0 5%;
   height: auto;
   position: relative;
 }
-@media screen and (min-width: 1024px) {
-  /* line 171, ../sass/_main.scss */
+@media only screen {
+  /* line 162, ../sass/_main.scss */
   .footer left-block, .footer right-block {
-    display: inline-block;
-    width: 40%;
-    margin: 0 5%;
+    margin-bottom: 4rem;
   }
 }
-/* line 184, ../sass/_main.scss */
-.footer left-block {
-  float: left;
+@media only screen and (min-width: 46.163em) {
+  /* line 162, ../sass/_main.scss */
+  .footer left-block, .footer right-block {
+    margin-bottom: 0;
+  }
+}
+@media only screen {
+  /* line 162, ../sass/_main.scss */
+  .footer left-block, .footer right-block {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 162, ../sass/_main.scss */
+  .footer left-block, .footer right-block {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /* line 162, ../sass/_main.scss */
+  .footer left-block, .footer right-block {
+    display: inline-block;
+    margin: 0 2.5%;
+  }
+}
+@media only screen {
+  /* line 176, ../sass/_main.scss */
+  .footer left-block {
+    float: right;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 176, ../sass/_main.scss */
+  .footer left-block {
+    float: left;
+  }
+}
+@media only screen {
+  /* line 178, ../sass/_main.scss */
+  .footer left-block a {
+    float: left;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 178, ../sass/_main.scss */
+  .footer left-block a {
+    float: right;
+  }
+}
+/* line 182, ../sass/_main.scss */
+.footer right-block {
+  margin-bottom: 1rem;
+}
+@media only screen {
+  /* line 182, ../sass/_main.scss */
+  .footer right-block {
+    float: right;
+  }
 }
 /* line 186, ../sass/_main.scss */
-.footer left-block a {
-  float: right;
-}
-/* line 190, ../sass/_main.scss */
-.footer right-block {
-  float: right;
-}
-/* line 193, ../sass/_main.scss */
 .footer h4 {
-  float: right;
   display: inline-block;
   font-size: 0.9rem;
   font-family: "lora", serif;
@@ -716,30 +850,22 @@ input {
   color: white;
   margin: 0;
 }
-@media screen and (min-width: 1024px) {
-  /* line 193, ../sass/_main.scss */
-  .footer h4 {
-    float: left;
-  }
-}
-/* line 210, ../sass/_main.scss */
+/* line 199, ../sass/_main.scss */
 .footer img {
-  float: right;
   display: inline-block;
   height: 2rem;
   width: auto;
   margin-top: 0.5rem;
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
-@media screen and (min-width: 1024px) {
-  /* line 210, ../sass/_main.scss */
+@media only screen {
+  /* line 199, ../sass/_main.scss */
   .footer img {
-    float: left;
+    float: right;
   }
 }
-
-/* line 223, ../sass/_main.scss */
-#contribute {
+/* line 207, ../sass/_main.scss */
+.footer #contribute {
   color: white;
   font-size: 1.2rem;
   font-family: "Lato", sans-serif;
@@ -753,17 +879,16 @@ input {
   display: inline-block;
   text-decoration: none;
 }
-
-/* line 238, ../sass/_main.scss */
-.social {
+/* line 222, ../sass/_main.scss */
+.footer .social {
   line-height: 3.4rem;
   height: 3.4rem;
   width: 3.5rem;
   display: inline-block;
   position: relative;
 }
-/* line 244, ../sass/_main.scss */
-.social .icon {
+/* line 228, ../sass/_main.scss */
+.footer .social .icon {
   display: inline-block;
   width: 1.75em;
   height: 1.75em;
