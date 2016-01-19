@@ -100,6 +100,10 @@ var RATES = (_RATES = {}, (0, _defineProperty3.default)(_RATES, CURRENT, [{
   rate: 0.52
 }]), _RATES);
 
+function roundCash(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
 function totalTaxes(type, totalIncome, exemptions) {
   var taxableIncome = totalIncome - STANDARD_DEDUCTION - exemptions * EXEMPTION;
   var taxes = 0;
@@ -236,13 +240,13 @@ var App = (function (_React$Component) {
           'div',
           { className: 'savings' },
           '$',
-          costDelta,
+          roundCash(costDelta,2),
           ' saved each year'
         ) : _react2.default.createElement(
           'div',
           { className: 'costs' },
           '$',
-          -costDelta,
+          roundCash(-costDelta,2),
           ' in additional costs each year'
         )
       );
