@@ -158,7 +158,7 @@ var App = (function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(App).call(this));
 
-    _this.state = { income: 53657, exemptions: 4, healthcare: AVERAGE_HEALTHCARE_COST };
+    _this.state = { income: 53657, exemptions: 1, healthcare: AVERAGE_HEALTHCARE_COST };
     return _this;
   }
 
@@ -213,12 +213,7 @@ var App = (function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'label'},
-            'Number of exemptions ',
-            _react2.default.createElement(
-              'a',
-              { href: "https://apps.irs.gov/app/withholdingcalculator/", target: "_blank", 'data-tipsy': "Personal and dependent exemptions reduce the amount of your income that's considered taxable. Generally, everyone can take a single exemption for themselves, and an additional exemption for each dependent in their household. Use the linked IRS calculator to determine your specific number of exemptions"},
-              '(?)'
-            )
+            'Number of dependents in your household'
           ),
           _react2.default.createElement('input', { type: 'number', value: exemptions, onChange: setExemptions })
         ),

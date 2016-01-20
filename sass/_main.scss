@@ -45,11 +45,15 @@ html,body{
     display: inline-block;
     font-family: "Lora", serif;
     font-weight: 300;
+    color: #EA504E;
+    // text-shadow: 1px 1px 15px rgba(#FFFFFF, 0.25);
+    letter-spacing: 0.075rem;
     span{
-      @include set(font-size, $sm-up: 2.25rem, $md-up: 3.5rem, $lg-up: 4.25rem);
+      @include set(font-size, $sm-up: 2.25rem, $md-up: 3.25rem, $lg-up: 3.5rem);
       display: block;
       font-weight: 400;
-
+      color: #FFFFFF;
+      // text-shadow: 1px 1px 5px rgba(#EA504E, 0.25);
     }
   }
   @media screen and (min-width: 1024px){
@@ -102,24 +106,81 @@ html,body{
     line-height: 1.5;
     margin: 0;
   }
+  #info-link{
+    @include set(display, $sm-up: none, $lg-l-up: block);
+    @extend %red-button;
+    margin-top: 1rem;
+    float: right;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.725rem;
+  }
+  #share{
+    @include set(position, $sm-up: relative, $lg-l-up: absolute);
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01rem;
+    line-height: 2rem;
+    height: 2rem;
+    bottom: 0;
+    right: 1rem;
+    height: auto;
+    background: #087ED7;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    &:hover{
+      background: darken(#087ED7, 10);
+    }
+  }
+  .social{
+    height: 3rem;
+    box-sizing: border-box;
+    margin: 0;
+    @include set(width, $sm-up: 2.5rem);
+    display: block;
+    position: relative;
+    .icon {
+      @extend %absolute-center-item;
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: rgba(#ffffff, 0.5);
+      transition: fill 0.45s ease-in-out;
+      &:hover{
+        fill: rgba(#ffffff, 1);
+      }
+    }
+  }
 }
 
 label{
   text-align: left;
   a{
-    @include tipsy(e, #087ED7, 0.25rem , 0);
+    @media screen and (max-width: 1024px){
+      @include tipsy(n, #087ED7, 0.25rem , 0);
+    }
+    @media screen and (min-width: 1024px){
+      @include tipsy(e, #087ED7, 0.25rem , 0);
+    }
     &:after{
       @include set(font-size, $sm-up: 0.9rem, $lg-up: 0.85rem);
       font-family: "Lato", serif;
       font-weight: 300;
       letter-spacing: 0.01rem;
       line-height: 1.5;
+      width: 10rem;
+      z-index: 1000;
+      @media screen and (min-width: 1024px){
+        width: 14rem;
+      }
     }
     color: #087ED7;
     text-decoration: none;
     transition: all 0.45s ease-in-out;
     &:hover{
-      color: #EA504E;
+      color: #087ED7;
     }
   }
 }
@@ -205,7 +266,7 @@ input {
     h4{
       @include set(float, $lg-up: left);
       @include set(width, $sm-up: 70%, $lg-up: auto);
-      @include set(margin, $sm-up: 0 auto, $lg-up: 0);
+      @include set(margin, $sm-up: 0 auto, $lg-up: 0 1rem 0 0);
       @include set(display, $sm-up: block, $lg-up: inline-block);
       text-align: center;
       font-size: 0.9rem;
@@ -229,21 +290,8 @@ input {
     }
   }
 
-  a#contribute{
-    @include set(width, $sm-up: 70%, $lg-up: auto);
-    @include set(margin, $sm-up: 0 auto, $lg-up: 0);
-    @include set(display, $sm-up: block, $lg-up: inline-block);
-    text-align: center;
-    color: white;
-    font-size: 1.2rem;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.01rem;
-    line-height: 2rem;
-    height: 2rem;
-    padding: 0.7rem 1.35rem;
-    background: #EA504E;
-    text-decoration: none;
+  #contribute{
+    @extend %red-button;
   }
 
   .social{

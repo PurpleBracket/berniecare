@@ -25,12 +25,19 @@
     <div id="body">
       <div id="overlay"></div>
       <div class="intro">
-        <h1><span>Bernie Care</span> Savings Calculator</h1>
+        <!-- <h1><span>Bernie Care</span> Savings Calculator</h1> -->
+        <h1><span>Medicare for All</span> Savings Calculator</h1>
       </div>
       <div id="widget">
         <img src="imgs/sanderslogo.svg" alt='Bernie Sanders 2016 Logo' id="logo">
         <p>How much will you save when Bernie Sanders' healthcare plan is implemented?</p>
         <section id="app">loading...</section>
+        <!-- <a id="info-link">More information</a> -->
+        <div id="share">Share!
+          <a href="https://www.facebook.com/berniesanders" class="social"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
+          <a href="https://twitter.com/BernieSanders" class="social"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+        </div>
+
       </div>
       <div class="footer">
         <right-block>
@@ -83,5 +90,28 @@
       ga('create', 'UA-72540796-1', 'auto');
       ga('send', 'pageview');
     </script> -->
+    <script>
+    function is_touch_device() {
+     return (('ontouchstart' in window)
+          || (navigator.MaxTouchPoints > 0)
+          || (navigator.msMaxTouchPoints > 0));
+    }
+
+    var tipsyEl = document.getElementById('tipsy'),
+        windowWidth = window.innerWidth;
+
+      if (is_touch_device() && windowWidth <= 1024) {
+        tipsyEl.removeAttribute('href');
+
+        tipsyEl.addEventListener('click', function (e) {
+            if (e.offsetX > tipsyEl.offsetWidth) {
+              console.log('meow');
+            } else {
+              console.log('woff');
+            }
+        });
+
+      }
+    </script>
   </body>
 </html>

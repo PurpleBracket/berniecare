@@ -95,3 +95,25 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
     @media #{$xxlarge-only} { #{$prop}: $xxlg;}
   }
 }
+
+
+%red-button{
+  @include set(width, $sm-up: 70%, $lg-up: auto);
+  @include set(margin, $sm-up: 0 auto, $lg-up: 0);
+  @include set(display, $sm-up: block, $lg-up: inline-block);
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  line-height: 2rem;
+  height: 2rem;
+  padding: 0.7rem 1.35rem;
+  background: #EA504E;
+  text-decoration: none;
+  transition: background 0.45s ease-in-out;
+  &:hover{
+    background: darken(#EA504E, 10);
+  }
+}
