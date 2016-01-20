@@ -100,6 +100,10 @@ var RATES = (_RATES = {}, (0, _defineProperty3.default)(_RATES, CURRENT, [{
   rate: 0.52
 }]), _RATES);
 
+function roundCash(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
 function totalTaxes(type, totalIncome, exemptions) {
   var taxableIncome = totalIncome - STANDARD_DEDUCTION - exemptions * EXEMPTION;
   var taxes = 0;
@@ -153,7 +157,7 @@ var App = (function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(App).call(this));
 
-    _this.state = { income: 50000, exemptions: 4, healthcare: AVERAGE_HEALTHCARE_COST };
+    _this.state = { income: 53657, exemptions: 4, healthcare: AVERAGE_HEALTHCARE_COST };
     return _this;
   }
 
@@ -208,7 +212,12 @@ var App = (function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'label' },
-            'Number of exemptions'
+            'Number of exemptions ',
+            _react2.default.createElement(
+              'a',
+              { href: "https://apps.irs.gov/app/withholdingcalculator/", target: "_blank"},
+              '(?)'
+            )
           ),
           _react2.default.createElement('input', { type: 'number', value: exemptions, onChange: setExemptions })
         ),
@@ -231,13 +240,13 @@ var App = (function (_React$Component) {
           'div',
           { className: 'savings' },
           '$',
-          costDelta,
+          roundCash(costDelta,2),
           ' saved each year'
         ) : _react2.default.createElement(
           'div',
           { className: 'costs' },
           '$',
-          -costDelta,
+          roundCash(-costDelta,2),
           ' in additional costs each year'
         )
       );
