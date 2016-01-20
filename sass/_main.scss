@@ -16,6 +16,7 @@ html,body{
   display: block;
   position: relative;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 #overlay{
   @extend %absolute-center-item;
@@ -27,7 +28,7 @@ html,body{
 
 .intro{
   @extend %absolute-center-item;
-  @include set(width, $sm-up: 70%, $lg-l-up: 40%);
+  @include set(width, $sm-up: 85%, $lg-l-up: 40%);
   @include set(padding-top, $sm-up: 1rem, $lg-l-up: 20rem);
   @include set(padding-bottom, $sm-up: 0.5rem, $lg-up: 0);
 
@@ -46,14 +47,12 @@ html,body{
     font-family: "Lora", serif;
     font-weight: 300;
     color: #EA504E;
-    // text-shadow: 1px 1px 15px rgba(#FFFFFF, 0.25);
     letter-spacing: 0.075rem;
     span{
-      @include set(font-size, $sm-up: 2.25rem, $md-up: 3.25rem, $lg-up: 3.5rem);
+      @include set(font-size, $sm-up: 2rem, $md-up: 3.25rem, $lg-up: 3.5rem);
       display: block;
       font-weight: 400;
       color: #FFFFFF;
-      // text-shadow: 1px 1px 5px rgba(#EA504E, 0.25);
     }
   }
   @media screen and (min-width: 1024px){
@@ -67,6 +66,8 @@ html,body{
 #widget {
   @extend %absolute-center-item;
   @include set(width, $sm-up: 70%, $lg-l-up: 40%);
+  @include set(padding-bottom, $sm-up: 0 !important, $lg-l-up: 1.5rem !important);
+
   position: relative;
   top: 0;
   left: 0;
@@ -78,7 +79,6 @@ html,body{
   text-align: center;
   height: auto;
   padding: 1.5rem;
-  padding-bottom: 0;
   border-radius: 4px;
   margin: 0 auto;
   position: relative;

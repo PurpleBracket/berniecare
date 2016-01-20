@@ -524,6 +524,7 @@ html, body {
   display: block;
   position: relative;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 @media only screen {
   /* line 7, ../sass/_main.scss */
@@ -562,7 +563,7 @@ html, body {
   }
 }
 
-/* line 20, ../sass/_main.scss */
+/* line 21, ../sass/_main.scss */
 #overlay {
   background: rgba(8, 126, 215, 0.25);
   display: block;
@@ -570,7 +571,7 @@ html, body {
   height: 100%;
 }
 
-/* line 28, ../sass/_main.scss */
+/* line 29, ../sass/_main.scss */
 .intro {
   color: #FFFFFF;
   margin: 0 auto;
@@ -581,42 +582,42 @@ html, body {
   position: relative;
 }
 @media only screen {
-  /* line 28, ../sass/_main.scss */
+  /* line 29, ../sass/_main.scss */
   .intro {
-    width: 70%;
+    width: 85%;
   }
 }
 @media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
-  /* line 28, ../sass/_main.scss */
+  /* line 29, ../sass/_main.scss */
   .intro {
     width: 40%;
   }
 }
 @media only screen {
-  /* line 28, ../sass/_main.scss */
+  /* line 29, ../sass/_main.scss */
   .intro {
     padding-top: 1rem;
   }
 }
 @media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
-  /* line 28, ../sass/_main.scss */
+  /* line 29, ../sass/_main.scss */
   .intro {
     padding-top: 20rem;
   }
 }
 @media only screen {
-  /* line 28, ../sass/_main.scss */
+  /* line 29, ../sass/_main.scss */
   .intro {
     padding-bottom: 0.5rem;
   }
 }
 @media only screen and (min-width: 46.163em) {
-  /* line 28, ../sass/_main.scss */
+  /* line 29, ../sass/_main.scss */
   .intro {
     padding-bottom: 0;
   }
 }
-/* line 41, ../sass/_main.scss */
+/* line 42, ../sass/_main.scss */
 .intro h1 {
   width: 100%;
   display: inline-block;
@@ -626,31 +627,31 @@ html, body {
   letter-spacing: 0.075rem;
 }
 @media only screen {
-  /* line 41, ../sass/_main.scss */
+  /* line 42, ../sass/_main.scss */
   .intro h1 {
     font-size: 1.5rem;
   }
 }
 @media only screen and (min-width: 21.313em) {
-  /* line 41, ../sass/_main.scss */
+  /* line 42, ../sass/_main.scss */
   .intro h1 {
     font-size: 2.5rem;
   }
 }
 @media only screen and (min-width: 46.163em) {
-  /* line 41, ../sass/_main.scss */
+  /* line 42, ../sass/_main.scss */
   .intro h1 {
     font-size: 2.75rem;
   }
 }
 @media only screen {
-  /* line 41, ../sass/_main.scss */
+  /* line 42, ../sass/_main.scss */
   .intro h1 {
     text-align: center;
   }
 }
 @media only screen and (min-width: 46.163em) {
-  /* line 41, ../sass/_main.scss */
+  /* line 42, ../sass/_main.scss */
   .intro h1 {
     text-align: right;
   }
@@ -664,7 +665,7 @@ html, body {
 @media only screen {
   /* line 51, ../sass/_main.scss */
   .intro h1 span {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
 @media only screen and (min-width: 21.313em) {
@@ -680,7 +681,7 @@ html, body {
   }
 }
 @media screen and (min-width: 1024px) {
-  /* line 28, ../sass/_main.scss */
+  /* line 29, ../sass/_main.scss */
   .intro {
     transform: translate(-50%, -50%);
     top: 45%;
@@ -690,7 +691,7 @@ html, body {
   }
 }
 
-/* line 67, ../sass/_main.scss */
+/* line 66, ../sass/_main.scss */
 #widget {
   position: relative;
   top: 0;
@@ -703,25 +704,36 @@ html, body {
   text-align: center;
   height: auto;
   padding: 1.5rem;
-  padding-bottom: 0;
   border-radius: 4px;
   margin: 0 auto;
   position: relative;
 }
 @media only screen {
-  /* line 67, ../sass/_main.scss */
+  /* line 66, ../sass/_main.scss */
   #widget {
     width: 70%;
   }
 }
 @media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
-  /* line 67, ../sass/_main.scss */
+  /* line 66, ../sass/_main.scss */
   #widget {
     width: 40%;
   }
 }
+@media only screen {
+  /* line 66, ../sass/_main.scss */
+  #widget {
+    padding-bottom: 0 !important;
+  }
+}
+@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+  /* line 66, ../sass/_main.scss */
+  #widget {
+    padding-bottom: 1.5rem !important;
+  }
+}
 @media screen and (min-width: 1024px) {
-  /* line 67, ../sass/_main.scss */
+  /* line 66, ../sass/_main.scss */
   #widget {
     transform: translate(-50%, -50%);
     position: absolute;
