@@ -6,7 +6,6 @@
  */
 @mixin tipsy($gravity, $bgcolor, $bordersize, $radius) {
   position: relative;
-  display: inline-block;
 
   &:hover, &:focus {
     &:before, &:after {
@@ -43,6 +42,7 @@
     padding: 5px 10px;
     white-space: wrap;
     width: 14rem;
+    height: 5rem;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
   }
 

@@ -31,7 +31,6 @@ html,body{
   @include set(width, $sm-up: 85%, $lg-l-up: 40%);
   @include set(padding-top, $sm-up: 1rem, $lg-l-up: 20rem);
   @include set(padding-bottom, $sm-up: 0.5rem, $lg-up: 0);
-
   color: #FFFFFF;
   margin: 0 auto;
   position: relative;
@@ -48,6 +47,7 @@ html,body{
     font-weight: 300;
     color: #EA504E;
     letter-spacing: 0.075rem;
+    text-shadow: 1px 1px 6px rgba(darken(#087ED7, 27.5), 1);
     span{
       @include set(font-size, $sm-up: 2rem, $md-up: 3.25rem, $lg-up: 3.5rem);
       display: block;
@@ -114,6 +114,7 @@ html,body{
     @include set(height, $sm-up: 3rem, $lg-l-up: 7rem);
     @include set(margin-top, $sm-up: 2rem, $lg-l-up: 0);
     background: #087ED7;
+    transition: background 0.45s ease-in-out;
     &:hover{
       background: darken(#087ED7, 10);
     }
@@ -147,8 +148,20 @@ html,body{
   }
 }
 
-label{
+.label{
+  display: block;
   text-align: left;
+  &.tipsy{
+    @include tipsy(n, #087ED7, 0.25rem , 0);
+    display: block !important;
+    &:after{
+      @include set(font-size, $sm-up: 0.9rem, $lg-up: 0.85rem);
+      font-family: "Lato", serif;
+      font-weight: 300;
+      letter-spacing: 0.01rem;
+      line-height: 1.5;
+    }
+  }
 }
 .inputArea {
   display: block;

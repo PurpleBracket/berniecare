@@ -222,7 +222,7 @@ var App = (function (_React$Component) {
           { className: 'inputArea' },
           _react2.default.createElement(
             'div',
-            { className: 'label' },
+            { className: 'label tipsy', 'data-tipsy': 'Current healthcare costs include amount spent per year on 1) health insurance premiums, 2) deductibles and 3) out of pocket expenses.' },
             'Current healthcare costs'
           ),
           _react2.default.createElement('input', { type: 'number', value: healthcare, onChange: setHealthcare }),
