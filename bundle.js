@@ -212,11 +212,11 @@ var App = (function (_React$Component) {
           { className: 'inputArea' },
           _react2.default.createElement(
             'div',
-            { className: 'label' },
+            { className: 'label'},
             'Number of exemptions ',
             _react2.default.createElement(
               'a',
-              { href: "https://apps.irs.gov/app/withholdingcalculator/", target: "_blank"},
+              { href: "https://apps.irs.gov/app/withholdingcalculator/", target: "_blank", 'data-tipsy': "Personal and dependent exemptions reduce the amount of your income that's considered taxable. Generally, everyone can take a single exemption for themselves, and an additional exemption for each dependent in their household. Use the linked IRS calculator to determine your specific number of exemptions"},
               '(?)'
             )
           ),

@@ -106,6 +106,22 @@ html,body{
 
 label{
   text-align: left;
+  a{
+    @include tipsy(e, #087ED7, 0.25rem , 0);
+    &:after{
+      @include set(font-size, $sm-up: 0.9rem, $lg-up: 0.85rem);
+      font-family: "Lato", serif;
+      font-weight: 300;
+      letter-spacing: 0.01rem;
+      line-height: 1.5;
+    }
+    color: #087ED7;
+    text-decoration: none;
+    transition: all 0.45s ease-in-out;
+    &:hover{
+      color: #EA504E;
+    }
+  }
 }
 .inputArea {
   display: block;
