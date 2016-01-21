@@ -22,8 +22,9 @@
   </head>
   <body>
     <script>
-      window.fbAsyncInit = function() { FB.init({ appId: '127848774262326', xfbml: true, version: 'v2.5' }); };
-      (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+      // uncomment when FB posting works
+      /*window.fbAsyncInit = function() { FB.init({ appId: '127848774262326', xfbml: true, version: 'v2.5' }); };
+      (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));*/
     </script>
     <div id="body">
       <div id="overlay"></div>
@@ -102,7 +103,7 @@
           openInNewTab(twitterUrl);
         }
         else {
-          var twitterUrl = 'https://twitter.com/intent/tweet?text=Find%20out%20how%20much%20you%27ll%20save%20when%20@BernieSanders%20healthcare%20plan%20is%20implemented:%20berniecare.org&source=webclient';
+          var twitterUrl = 'https://twitter.com/intent/tweet?text=Find%20out%20how%20much%20you%27ll%20save%20when%20@BernieSanders%27%20healthcare%20plan%20is%20implemented:%20berniecare.org&source=webclient';
           openInNewTab(twitterUrl);
         }
       }

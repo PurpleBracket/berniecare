@@ -4,6 +4,7 @@
   "description": "berniecare",
   "main": "bundle.js",
   "author": "Tristan Davies <npm@tristan.io>",
+  "repository": "https://github.com/wboykinm/berniecare",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
