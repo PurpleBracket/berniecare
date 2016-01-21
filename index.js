@@ -47,6 +47,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var STANDARD_DEDUCTION = 12600;
 var EXEMPTION = 4050;
 var INCOME_TAX_PREMIUM = 0.022;
+var AVERAGE_HOUSEHOLD_INCOME = 53657;
 var AVERAGE_HEALTHCARE_COST = 4955 + 1318;
 
 var CURRENT = (0, _symbol2.default)();
@@ -157,7 +158,7 @@ var App = (function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(App).call(this));
 
-    _this.state = { income: 53657, exemptions: 4, healthcare: AVERAGE_HEALTHCARE_COST };
+    _this.state = { income: AVERAGE_HOUSEHOLD_INCOME, exemptions: 4, healthcare: AVERAGE_HEALTHCARE_COST };
     return _this;
   }
 
@@ -211,13 +212,8 @@ var App = (function (_React$Component) {
           { className: 'inputArea' },
           _react2.default.createElement(
             'div',
-            { className: 'label' },
-            'Number of exemptions ',
-            _react2.default.createElement(
-              'a',
-              { href: "https://apps.irs.gov/app/withholdingcalculator/", target: "_blank"},
-              '(?)'
-            )
+            { className: 'label'},
+            'Number of dependents in your household'
           ),
           _react2.default.createElement('input', { type: 'number', value: exemptions, onChange: setExemptions })
         ),
@@ -226,7 +222,7 @@ var App = (function (_React$Component) {
           { className: 'inputArea' },
           _react2.default.createElement(
             'div',
-            { className: 'label' },
+            { className: 'label tipsy', 'data-tipsy': 'Current healthcare costs include amount spent per year on 1) health insurance premiums, 2) deductibles and 3) out of pocket expenses.' },
             'Current healthcare costs'
           ),
           _react2.default.createElement('input', { type: 'number', value: healthcare, onChange: setHealthcare }),
@@ -247,7 +243,7 @@ var App = (function (_React$Component) {
           { className: 'costs' },
           '$',
           roundCash(-costDelta,2),
-          ' in additional costs each year'
+          ' in additional costs'
         )
       );
     }
