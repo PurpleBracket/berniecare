@@ -14,8 +14,8 @@
     <meta name="twitter:site" content="@coders4sanders">
     <meta name="twitter:creator" content="@coders4sanders">
 
-    <title>Bernie Care</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" charset="utf-8">
+    <title>Medicare for All Savings Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" charset="utf-8" media="none" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="stylesheets/app.css" charset="utf-8">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
@@ -24,17 +24,25 @@
     <div id="body">
       <div id="overlay"></div>
       <div class="intro">
-        <h1><span>Bernie Care</span> Savings Calculator</h1>
+        <!-- <h1><span>Bernie Care</span> Savings Calculator</h1> -->
+        <h1><span>Medicare for All</span> Savings Calculator</h1>
       </div>
       <div id="widget">
-        <img src="imgs/sanderslogo.svg" alt='' id="logo">
+        <img src="imgs/sanderslogo.svg" alt='Bernie Sanders 2016 Logo' id="logo">
         <p>How much will you save when Bernie Sanders' healthcare plan is implemented?</p>
         <section id="app">loading...</section>
+        <!-- <a id="info-link">More information</a> -->
+        <div id="share">
+          <a href="" class="social">Share!</a>
+          <a href="" class="social"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
+          <a href="" class="social"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+        </div>
+
       </div>
       <div class="footer">
         <right-block>
           <h4>Built by volunteers</h4>
-          <img src="imgs/white-billionaires-2x.png" alt="">
+          <img src="imgs/white-billionaires-2x.png" alt="built buy volunteers, not the billionaires!">
         </right-block>
         <left-block>
 
@@ -73,6 +81,10 @@
       </svg>
     </div>
     <script src="bundle.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/jquery.steps.min.js"></script>
+    <script src="js/ui.js"></script>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -81,7 +93,6 @@
 
       ga('create', 'UA-72605239-1', 'auto');
       ga('send', 'pageview');
-
     </script>
   </body>
 </html>
