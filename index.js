@@ -213,7 +213,7 @@ var App = (function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'label'},
-            'Number of dependents in your household'
+            'Number of people in your household'
           ),
           _react2.default.createElement('input', { type: 'number', value: exemptions, onChange: setExemptions })
         ),
