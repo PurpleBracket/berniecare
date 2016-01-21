@@ -2,16 +2,18 @@
   "name": "berniecare",
   "version": "0.0.0",
   "description": "berniecare",
-  "main": "bundle.js",
+  "main": "dist/bundle.js",
   "author": "Tristan Davies <npm@tristan.io>",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "browserify index.js -o bundle.js",
-    "watch": "watchify index.js -o bundle.js -v",
+    "clean": "rm -rf dist && rm -rf ../berniecare",
+    "babel": "babel -s -D -d dist src",
+    "babel-watch": "babel -s -D -d dist -w src",
+    "build": "npm run clean; npm run babel; browserify dist/index.js -o dist/bundle.js && mv dist ../berniecare",
+    "watch": "npm run clean; npm run babel; npm run babel-watch & watchify dist/index.js -o dist/bundle.js -v",
     "prepublish": "npm run test; npm run lint",
     "lint": "standard src/**/*.js",
-    "test": "node test/*.js"
+    "test": "node dist/test/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",
