@@ -158,7 +158,7 @@ var App = (function (_React$Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(App).call(this));
 
-    _this.state = { income: 53657, exemptions: 1, healthcare: AVERAGE_HEALTHCARE_COST };
+    _this.state = { income: 53657, exemptions: 4, healthcare: AVERAGE_HEALTHCARE_COST };
     return _this;
   }
 
@@ -212,8 +212,13 @@ var App = (function (_React$Component) {
           { className: 'inputArea' },
           _react2.default.createElement(
             'div',
-            { className: 'label'},
-            'Number of dependents in your household'
+            { className: 'label' },
+            'Number of exemptions ',
+            _react2.default.createElement(
+              'a',
+              { href: "https://apps.irs.gov/app/withholdingcalculator/", target: "_blank"},
+              '(?)'
+            )
           ),
           _react2.default.createElement('input', { type: 'number', value: exemptions, onChange: setExemptions })
         ),
@@ -222,7 +227,7 @@ var App = (function (_React$Component) {
           { className: 'inputArea' },
           _react2.default.createElement(
             'div',
-            { className: 'label tipsy', 'data-tipsy': 'Current healthcare costs include amount spent per year on 1) health insurance premiums, 2) deductibles and 3) out of pocket expenses.' },
+            { className: 'label' },
             'Current healthcare costs'
           ),
           _react2.default.createElement('input', { type: 'number', value: healthcare, onChange: setHealthcare }),
@@ -2272,7 +2277,7 @@ module.exports = performanceNow;
  *
  * @providesModule shallowEqual
  * @typechecks
- *
+ * 
  */
 
 'use strict';
