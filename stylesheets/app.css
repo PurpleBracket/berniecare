@@ -437,12 +437,6 @@ th {
   padding: 0;
 }
 
-/**
- * Tipsy.sass
- * @author: Dang Van Thanh
- * @description: A Simple Mixin Tooltip CSS Using Sass
- * @version: 1.0.5
- */
 /* line 44, ../sass/_mixins.scss */
 #overlay, .intro, #widget, .footer .social .icon {
   position: absolute;
@@ -766,7 +760,7 @@ input {
 @media only screen {
   /* line 154, ../sass/_main.scss */
   .footer {
-    height: 20rem;
+    height: 15rem;
   }
 }
 @media only screen and (min-width: 46.163em) {
@@ -796,6 +790,12 @@ input {
   position: relative;
 }
 @media only screen {
+  /* line 166, ../sass/_main.scss */
+  .footer left-block, .footer right-block {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 46.163em) {
   /* line 166, ../sass/_main.scss */
   .footer left-block, .footer right-block {
     width: auto;
@@ -832,7 +832,7 @@ input {
     float: none;
   }
 }
-@media only screen and (min-width: 46.163em) and (orientation: landscape), only screen and (min-width: 64.063em), only screen and (min-width: 64.063em) {
+@media only screen and (min-width: 46.163em) {
   /* line 180, ../sass/_main.scss */
   .footer left-block a {
     float: right;
@@ -1036,9 +1036,20 @@ input {
 .footer .social {
   line-height: 3.4rem;
   height: 3.4rem;
-  width: 3.5rem;
   display: inline-block;
   position: relative;
+}
+@media only screen {
+  /* line 233, ../sass/_main.scss */
+  .footer .social {
+    width: 23%;
+  }
+}
+@media only screen and (min-width: 46.163em) {
+  /* line 233, ../sass/_main.scss */
+  .footer .social {
+    width: 3.5rem;
+  }
 }
 /* line 239, ../sass/_main.scss */
 .footer .social .icon {
