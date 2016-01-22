@@ -29,6 +29,39 @@
       <div class="intro">
         <!-- <h1><span>Bernie Care</span> Savings Calculator</h1> -->
         <h1><span>Medicare for All</span> Savings Calculator</h1>
+        <div id="information">Policy Details
+
+          <h5 class="info-content">
+            <span>PRESS RELEASE</span>
+            Medicare-for-All Plan Detailed by Sanders: Improves Health Care, Cuts Costs
+          </h5>
+          <h6 class="info-content">JANUARY 17, 2016</h6>
+          <p class="info-content">
+            CHARLESTON, S.C. – U.S. Sen. Bernie Sanders on Sunday detailed a Medicare-for-all plan to provide better health care for all Americans at less cost.
+<br><br>
+            “Universal health care is an idea that has been supported in the United States by Democratic presidents going back to Franklin Roosevelt and Harry Truman,” Sanders said. “It is time for our country to join every other major industrialized nation on earth and guarantee health care to all citizens as a right, not a privilege.”
+<br><br>
+            The proposal would expand Medicare, the popular and successful health care program for seniors, and build on the success of the Affordable Care Act, which Sanders helped craft. Patients would be able to choose their own doctors and receive comprehensive care for everything from hospital stays to emergency room visits to primary and specialty care.
+<br><br>
+            Sanders’ Medicare-for-all plan would save $6 trillion over the next 10 years compared to the current system, according to a detailed analysis by Gerald Friedman, an economist at University of Massachusetts at Amherst who is a leading expert on health care costs.
+<br><br>
+            In a nation that now spends $3 trillion a year on health care – nearly $10,000 per person – Sanders’ plan would save consumers money by eliminating expensive and wasteful private health insurance. The plan would save taxpayers money by dramatically reducing overall health care costs and bringing down skyrocketing prescription drug prices which are far greater in the United States than in any other country.
+<br><br>
+            The typical family earning $50,000 a year would save nearly $6,000 annually in health care costs, Friedman calculated. The average working family now pays $4,955 in premiums for private insurance and spends another $1,318 on deductibles for care that isn’t covered. Under Sanders’ plan, a family of four earning $50,000 would pay just $466 per year to the Medicare-for-all program.
+<br><br>
+            Businesses would save more than $9,400 a year in health care costs under Sanders’ plan. The average annual cost to the employer for a worker with a family who makes $50,000 a year would go from $12,591 to just $3,100.
+<br><br>
+            The shift to universal health care would be paid for with a 2.2 percent health care premium (calculated under the rules for federal income taxes); a 6.2 percent health care payroll tax paid by employers; an estate tax on the wealthiest Americans and changes in the tax code to make federal income tax rates more progressive.
+<br><br>
+            Under the plan, individuals making $250,000 to $500,000 a year would be taxed at a rate of 37 percent. The top rate, 52 percent, would apply to those earning $10 million or more a year, a category that in 2013 included only the 13,000 wealthiest households in the United States.
+<br><br>
+            Additional savings would be achieved from reducing outlays for taxpayer-supported health care expenditures.
+<br><br>
+            Sanders laid out his health care plan and progressive tax reform proposals here in South Carolina where he and former Secretary of State Hillary Clinton and former Maryland Gov. Martin O’Malley were to take part on Sunday night in a nationally televised debate in their contest for the Democratic Party presidential nomination.
+          </p>
+
+          <a href="https://berniesanders.com/press-release/medicare-plan-detailed-sanders-improves-health-care-cuts-costs/" target="_blank" class="info-content">Read original press release</a>
+        </div>
       </div>
       <div id="widget">
         <img src="dist/imgs/sanderslogo.svg" alt='Bernie Sanders 2016 Logo' id="logo">
@@ -39,7 +72,6 @@
           <a onClick="shareTwitter()" class="social"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
           <a onClick="shareFacebook()" class="social"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
         </div>
-
       </div>
       <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -123,6 +155,7 @@
      }
     </script>
     <script>
+    // i work in a similar way
       var windowWidth = window.innerWidth,
           stepifyMobile = function() {
             if (windowWidth <= 627) { // iP 6s-l
@@ -130,8 +163,22 @@
                   distribution:[1,1,1,1]
               });
             }
+          },
+          modalActive = function(e) {
+            if ($(this).hasClass('active')) {
+              $(this).children('.info-content').removeClass('active').delay(350).queue(function() {
+                $(this).parent().removeClass('active');
+                $(this).dequeue();
+              });
+            } else {
+              $(this).addClass('active').delay(350).queue(function() {
+                $(this).children('.info-content').addClass('active');
+                $(this).dequeue();
+              });
+            }
           };
       $(document).ready(stepifyMobile());
+      $('#information').on('click', modalActive)
     </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

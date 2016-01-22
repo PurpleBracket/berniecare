@@ -36,7 +36,8 @@ body{
   position: relative;
   h1{
     @include set(font-size, $sm-up: 1.5rem, $md-up: 2.5rem, $lg-up: 2.75rem);
-    @include set(text-align, $sm-up: center, $lg-up: right);
+    @include set(text-align, $sm-up: center, $lg-l-up: right);
+    @include set(padding-bottom, $sm-up: 1rem, $lg-l-up: 0);
     width: 100%;
     display: inline-block;
     font-family: "Lora", serif;
@@ -44,11 +45,84 @@ body{
     color: #EA504E;
     letter-spacing: 0.075rem;
     text-shadow: 1px 1px 6px rgba(darken(#087ED7, 27.5), 1);
+    margin-bottom: 0.5rem;
     span{
       @include set(font-size, $sm-up: 2rem, $md-up: 3.25rem, $lg-up: 3.5rem);
       display: block;
       font-weight: 400;
       color: #FFFFFF;
+    }
+  }
+  #information{
+    @extend %red-button;
+    @include set(display, $sm-up: none, $lg-l-up: block);
+    cursor: pointer;
+    float: right;
+    background: #087ED7;
+    font-size: 0.8rem;
+    transition: all 0.45s ease-in-out;
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    width: 25%;
+    line-height: 2rem;
+    height: 2rem;
+    padding: 0.7rem 1.35rem;
+    h5{
+      @include set(font-size, $lg-l-up: 1rem);
+      font-family: "Lora", serif;
+      font-weight: 300;
+      letter-spacing: 0.075rem;
+      opacity: 0;
+      margin: 0 auto;
+      width: 90%;
+      text-align: right;
+      transition: all 0.45s ease-in-out;
+      span{
+        @include set(font-size, $lg-l-up: 0.8rem);
+
+        display: block;
+      }
+    }
+    h6, p{
+      opacity: 0;
+      margin: 0 auto;
+      width: 90%;
+      text-align: right;
+      transition: all 0.45s ease-in-out;
+    }
+    a{
+      @extend %red-button;
+      font-size: 0.6rem;
+      background: #ffffff;
+      color: #087ED7;
+      line-height: 1.5rem;
+      height: 1.5rem;
+      padding: 0.35rem 1.35rem;
+      margin-top: 1rem;
+      &:hover{
+        background: darken(#ffffff, 10);
+      }
+      opacity: 0;
+    }
+    p{
+      text-align: left;
+      max-height: 60%;
+      overflow: scroll;
+    }
+    &:hover{
+      background: darken(#087ED7, 10);
+    }
+    &.active{
+      height: 100%;
+      width: 100%;
+      bottom: -10%;
+      right: 0;
+      .info-content{
+        &.active{
+          opacity: 1;
+        }
+      }
     }
   }
 }
