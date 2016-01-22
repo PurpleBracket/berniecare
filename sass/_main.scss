@@ -1,46 +1,43 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300|Lora:400,700);
-html,body{
-  height: auto;
-  width: auto;
+html{
+  @include set(height, $sm-up: 100%);
+  @include set(background-position, $sm-up: 50% left);
+  @include set(background-size, $sm-up: cover);
+  @include set(background-image, $sm-up: url(../imgs/bernie-sanders-portrait-03-crop.jpg), $lg-l-up: url(../imgs/bernie-sanders-portrait-03.jpg));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: auto;
+}
+body{
+  height: 100%;
+  width: 100%;
   display: block;
+  background: rgba(#087ED7, 0.25);
+  overflow: auto;
 }
 #body {
-  @include set(background-position, $sm-up: bottom right, $lg-l-up: bottom right);
-  @include set(background-size, $sm-up: cover, $lg-l-up: cover);
-  @include set(background-image, $sm-up: url(../imgs/bernie-sanders-portrait-03-crop.jpg), $lg-l-up: url(../imgs/bernie-sanders-portrait-03.jpg));
+  @include set(padding-bottom, $sm-up: 1rem);
   margin: 0;
-  height: 100%;
-  min-height: 100vh;
+  height: auto;
   width: 100%;
   font-size: 16px;
   display: block;
   position: relative;
-  background-repeat: no-repeat;
   overflow: hidden;
+  clear: both;
 }
-#overlay{
-  @extend %absolute-center-item;
-  background: rgba(#087ED7, 0.25);
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 .intro{
-  @extend %absolute-center-item;
   @include set(width, $sm-up: 85%, $lg-l-up: 40%);
-  @include set(padding-top, $sm-up: 1rem, $lg-l-up: 20rem);
+  @include set(padding-top, $sm-up: 1rem, $lg-l-up: 25rem);
   @include set(padding-bottom, $sm-up: 0.5rem, $lg-up: 0);
+  @include set(float, $sm-up: none, $lg-l-up: left);
+  @include set(margin, $sm-up: 0 auto, $lg-l-up: 0 5%);
   color: #FFFFFF;
-  margin: 0 auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  transform: translate(0,0);
   position: relative;
   h1{
     @include set(font-size, $sm-up: 1.5rem, $md-up: 2.5rem, $lg-up: 2.75rem);
-    @include set(text-align, $sm-up: center, $lg-up: right);
+    @include set(text-align, $sm-up: center, $lg-l-up: right);
+    @include set(padding-bottom, $sm-up: 1rem, $lg-l-up: 0);
     width: 100%;
     display: inline-block;
     font-family: "Lora", serif;
@@ -48,6 +45,7 @@ html,body{
     color: #EA504E;
     letter-spacing: 0.075rem;
     text-shadow: 1px 1px 6px rgba(darken(#087ED7, 27.5), 1);
+    margin-bottom: 0.5rem;
     span{
       @include set(font-size, $sm-up: 2rem, $md-up: 3.25rem, $lg-up: 3.5rem);
       display: block;
@@ -55,41 +53,95 @@ html,body{
       color: #FFFFFF;
     }
   }
-  @media screen and (min-width: 1024px){
-    transform: translate(-50%, -50%);
-    top: 45%;
-    left: 25%;
+  #information{
+    @extend %red-button;
+    @include set(display, $sm-up: none, $lg-l-up: block);
+    cursor: pointer;
+    float: right;
+    background: #087ED7;
+    font-size: 0.8rem;
+    transition: all 0.45s ease-in-out;
     position: absolute;
-    margin: 0;
+    bottom: -10%;
+    right: 0;
+    width: 25%;
+    line-height: 2rem;
+    height: 2rem;
+    padding: 0.7rem 1.35rem;
+    h5{
+      @include set(font-size, $lg-l-up: 1rem);
+      font-family: "Lora", serif;
+      font-weight: 300;
+      letter-spacing: 0.075rem;
+      opacity: 0;
+      margin: 0 auto;
+      width: 90%;
+      text-align: right;
+      transition: all 0.45s ease-in-out;
+      span{
+        @include set(font-size, $lg-l-up: 0.8rem);
+
+        display: block;
+      }
+    }
+    h6, p{
+      opacity: 0;
+      margin: 0 auto;
+      width: 90%;
+      text-align: right;
+      transition: all 0.45s ease-in-out;
+    }
+    a{
+      @extend %red-button;
+      font-size: 0.6rem;
+      background: #ffffff;
+      color: #087ED7;
+      line-height: 1.5rem;
+      height: 1.5rem;
+      padding: 0.35rem 1.35rem;
+      margin-top: 1rem;
+      &:hover{
+        background: darken(#ffffff, 10);
+      }
+      opacity: 0;
+    }
+    p{
+      text-align: left;
+      max-height: 60%;
+      overflow: scroll;
+    }
+    &:hover{
+      background: darken(#087ED7, 10);
+    }
+    &.active{
+      height: 100%;
+      width: 100%;
+      bottom: -10%;
+      right: 0;
+      .info-content{
+        &.active{
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 #widget {
-  @extend %absolute-center-item;
   @include set(width, $sm-up: 70%, $lg-l-up: 40%);
-  @include set(padding-bottom, $sm-up: 0 !important, $lg-l-up: 1.5rem !important);
-
+  @include set(margin-top, $sm-up: 0, $lg-l-up: 1rem);
+  @include set(float, $sm-up: none, $lg-l-up: left);
   position: relative;
   top: 0;
   left: 0;
-  transform: translate(0,0);
-  position: relative;
   background: rgba(#FFFFFF, 0.75);
   color: #087ED7;
   font-family: lato, sans-serif;
   text-align: center;
   height: auto;
-  padding: 1.5rem;
-  border-radius: 4px;
+  padding: 2rem;
+  border-radius: 8px;
   margin: 0 auto;
   position: relative;
-  @media screen and (min-width: 1024px){
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 45%;
-    left: 70%;
-    margin: 0;
-  }
-
   #logo{
     max-width: 35%;
     width: 100%;
@@ -98,7 +150,7 @@ html,body{
     margin-bottom: 1rem;
   }
   p{
-    @include set(font-size, $sm-up: 1.35rem, $lg-up: 1.75rem);
+    @include set(font-size, $sm-up: 1rem, $lg-up: 1.75rem);
     display: inline-block;
     text-align: center;
     font-family: "Lato", serif;
@@ -107,21 +159,43 @@ html,body{
     line-height: 1.5;
     margin: 0;
   }
+  .btn {
+    @extend %red-button;
+    background: rgba(#EA504E ,0.85);
+    width: 30%;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    float: left;
+    display: inline-block;
+    &:hover{
+      background: rgba(#EA504E ,1);
+    }
+  }
+
+  .next-step {
+    float: right;
+  }
   #share{
-    @include set(position, $sm-up: relative, $lg-l-up: absolute);
-    @include set(right, $sm-up: 0, $lg-l-up: 2rem);
+    @include set(position, $sm-up: relative, $lg-up: absolute);
+    @include set(width, $sm-up: 70%, $lg-up: auto);
+
+    @include set(float, $sm-up: right, $lg-up: none);
+    @include set(right, $sm-up: 0, $lg-up: 2rem);
     @include set(bottom, $sm-up: 0);
-    @include set(height, $sm-up: 3rem, $lg-l-up: 7rem);
-    @include set(margin-top, $sm-up: 2rem, $lg-l-up: 0);
+    @include set(height, $sm-up: 3rem, $lg-up: 9rem);
+    @include set(margin-top, $sm-up: 0, $lg-up: 0);
     background: #087ED7;
     transition: background 0.45s ease-in-out;
     &:hover{
       background: darken(#087ED7, 10);
     }
     .social{
-      @include set(width, $sm-up: 32%, $lg-l-up: 3rem);
-      @include set(display, $sm-up: inline-block, $lg-l-up: block);
-      @include set(float, $sm-up: left, $lg-l-up: none);
+      @include set(width, $sm-up: 32%, $lg-up: 3rem);
+      @include set(display, $sm-up: inline-block, $lg-up: block);
+      @include set(float, $sm-up: left, $lg-up: none);
       color: white;
       text-decoration: none;
       height: 3em;
@@ -144,6 +218,9 @@ html,body{
           fill: rgba(#ffffff, 1);
         }
       }
+    }
+    &.lg{
+      @include set(display, $sm-up: none, $lg-up: block);
     }
   }
 }
@@ -169,7 +246,9 @@ html,body{
   position: relative;
   max-width: 256px;
 }
-
+#app{
+  padding: 1rem;
+}
 input {
   padding: 12px 16px;
   border: 0;
@@ -193,7 +272,6 @@ input {
   font-size: 2rem;
   font-weight: lighter;
 }
-
 .savings{
   font-size: 2.75rem;
   font-family: "Lato", sans-serif;
@@ -208,17 +286,14 @@ input {
 }
 
 .footer{
-  @include set(height, $sm-up: 15rem, $lg-up: 7rem, $lg-l-up: 5rem);
-
+  @include set(height, $sm-up: 15rem, $lg-up: 12rem, $lg-l-up: 4rem);
+  @include set(padding-top, $sm-up: 0.75rem, $lg-l-up: 0rem);
   position: relative;
   display: block;
-  width: 90%;
-  left: 5%;
-  @media screen and (min-width: 1024px){
-    position: absolute;
-    bottom: 0%;
-  }
-
+  width: 100%;
+  margin: 0;
+  clear: both;
+  box-sizing: border-box;
   left-block, right-block{
     @include set(width, $sm-up: 80%, $lg-up: auto, $lg-l-up: 45%);
     display: block;
@@ -288,3 +363,28 @@ input {
     }
   }
 }
+
+
+.stepify-container.hidden{
+	display:none;
+}
+
+.stepify-container input[type="submit"]{
+	margin-left:10px;
+}
+.nav-btn-container{
+  display: block;
+  height: 100%;
+  min-height: 3rem;
+  margin-top: 1rem;
+}
+.stepify-elem-container{
+  display: block;
+  height: 100%;
+  min-height: 5rem;
+}
+
+.stepify-container .next-step{margin-left:10px;}
+.stepify-ba-left {margin-left:0px;}
+.stepify-ba-right {margin-right:0px;}
+.stepify-ba-center {text-align:center;margin-left:auto;margin-right:auto;}

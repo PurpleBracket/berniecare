@@ -1,19 +1,13 @@
-var form = $("#savings-calc");
 
-form.children("div").steps({
-    headerTag: "h3",
-    bodyTag: "section",
-    transitionEffect: "slideLeft",
-    onStepChanging: function (event, currentIndex, newIndex)
-    {
+var windowWidth = window.innerWidth;
+if (windowWidth <= 627) { // iP 6s-l
+  $('.step').stepify({
+      distribution:[1,1,1,1]
+  });
+}
 
-    },
-    onFinishing: function (event, currentIndex)
-    {
 
-    },
-    onFinished: function (event, currentIndex)
-    {
-        alert("Submitted!");
-    }
-});
+if (!$("#step-3").hasClass("hidden")) {
+  $("#share").addClass('active');
+  console.log('moew');
+}
