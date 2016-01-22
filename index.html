@@ -23,20 +23,18 @@
   <body>
     <script>
       // uncomment when FB posting works
-      /*window.fbAsyncInit = function() { FB.init({ appId: '127848774262326', xfbml: true, version: 'v2.5' }); };
-      (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));*/
+      window.fbAsyncInit = function() { FB.init({ appId: '127848774262326', xfbml: true, version: 'v2.5' }); };
+      (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
     </script>
     <div id="body">
       <div id="overlay"></div>
       <div class="intro">
-        <!-- <h1><span>Bernie Care</span> Savings Calculator</h1> -->
         <h1><span>Medicare for All</span> Savings Calculator</h1>
       </div>
       <div id="widget">
         <img src="imgs/sanderslogo.svg" alt='Bernie Sanders 2016 Logo' id="logo">
         <p>How much will you save when Bernie Sanders' healthcare plan is implemented?</p>
         <section id="app">loading...</section>
-        <!-- <a id="info-link">More information</a> -->
         <div id="share">
           <a class="social">Share!</a>
           <a onClick="shareTwitter()" class="social"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
@@ -112,14 +110,14 @@
         if ($('.savings')[0]) {
           var savings1 = $('.savings')[0].children[1].innerHTML;
           // painfully nonfunctional:
-          /*FB.ui({
+          FB.ui({
             method: 'share',
             caption: "I'll save $" + savings1 + " per year when @U.S. Senator Bernie Sanders​ health care plan is implemented! Find out how much you'll save: ",
             href: 'http://berniecare.org',
             redirect_uri: 'http://berniecare.org'
-          }, function(response){});*/
-          var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=berniecare.org';
-          openInNewTab(facebookUrl);
+          }, function(response){});
+          //var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=berniecare.org';
+          //openInNewTab(facebookUrl);
         }
         else {
           var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=berniecare.org';
