@@ -64,10 +64,10 @@ body{
     position: absolute;
     bottom: -10%;
     right: 0;
-    width: 25%;
+    width: 20%;
     line-height: 2rem;
     height: 2rem;
-    padding: 0.7rem 1.35rem;
+    padding: 0.35rem 0.5rem;
     h5{
       @include set(font-size, $lg-l-up: 1rem);
       font-family: "Lora", serif;
@@ -80,7 +80,6 @@ body{
       transition: all 0.45s ease-in-out;
       span{
         @include set(font-size, $lg-l-up: 0.8rem);
-
         display: block;
       }
     }
@@ -108,7 +107,7 @@ body{
     p{
       text-align: left;
       max-height: 60%;
-      overflow: scroll;
+      overflow-y: scroll;
     }
     &:hover{
       background: darken(#087ED7, 10);
@@ -295,14 +294,14 @@ input {
   clear: both;
   box-sizing: border-box;
   left-block, right-block{
-    @include set(width, $sm-up: 80%, $lg-up: auto, $lg-l-up: 45%);
+    @include set(width, $sm-up: 80%, $lg-up: auto, $lg-l-up: 40%);
     display: block;
     margin: 0 10%;
     height: auto;
     position: relative;
     @media screen and (min-width: 1024px){
       display: inline-block;
-      margin: 0 2.5%;
+      margin: 0 5%;
     }
 
   }
