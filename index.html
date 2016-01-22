@@ -109,19 +109,20 @@
       var shareFacebook = function() {
         if ($('.savings')[0]) {
           var savings1 = $('.savings')[0].children[1].innerHTML;
-          // painfully nonfunctional:
           FB.ui({
             method: 'share',
-            caption: "I'll save $" + savings1 + " per year when @U.S. Senator Bernie Sanders​ health care plan is implemented! Find out how much you'll save: ",
+            caption: "I'll save $" + savings1 + " per year when Bernie Sanders'​ health care plan is implemented! Find out how much you'll save: ",
             href: 'http://berniecare.org',
             redirect_uri: 'http://berniecare.org'
           }, function(response){});
-          //var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=berniecare.org';
-          //openInNewTab(facebookUrl);
         }
         else {
-          var facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=berniecare.org';
-          openInNewTab(facebookUrl);
+          FB.ui({
+            method: 'share',
+            caption: "Find out how much you'll save per year when Bernie Sanders'​ health care plan is implemented!",
+            href: 'http://berniecare.org',
+            redirect_uri: 'http://berniecare.org'
+          }, function(response){});
         }
       }
     </script>
