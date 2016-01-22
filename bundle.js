@@ -195,7 +195,7 @@ var App = (function (_React$Component) {
         null,
         _react2.default.createElement(
           'label',
-          { className: 'inputArea step' },
+          { className: 'inputArea' },
           _react2.default.createElement(
             'div',
             { className: 'label' },
@@ -210,7 +210,7 @@ var App = (function (_React$Component) {
         ),
         _react2.default.createElement(
           'label',
-          { className: 'inputArea step' },
+          { className: 'inputArea' },
           _react2.default.createElement(
             'div',
             { className: 'label'},
@@ -220,7 +220,7 @@ var App = (function (_React$Component) {
         ),
         _react2.default.createElement(
           'label',
-          { className: 'inputArea step' },
+          { className: 'inputArea' },
           _react2.default.createElement(
             'div',
             { className: 'label tipsy', 'data-tipsy': 'Current healthcare costs include amount spent per year on 1) health insurance premiums, 2) deductibles and 3) out of pocket expenses.' },
@@ -235,7 +235,7 @@ var App = (function (_React$Component) {
         ),
         costDelta >= 0 ? _react2.default.createElement(
           'div',
-          { className: 'savings step' },
+          { className: 'savings' },
           '$',
           roundCash(costDelta,2),
           ' saved each year'
@@ -2273,7 +2273,7 @@ module.exports = performanceNow;
  *
  * @providesModule shallowEqual
  * @typechecks
- * 
+ *
  */
 
 'use strict';

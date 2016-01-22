@@ -9,6 +9,7 @@ gulp.task('ui', function () {
     return gulp.src(['bundle.js','bower_components/jquery/dist/jquery.min.js','js/underscore152.js','js/stepify.js']) //select all javascript files under js/ and any subdirectory
     .pipe(concat('serve.js')) //the name of the resulting file
     .pipe(uglify())
+    .pipe(gulp.dest('dist/js')) //the destination folder
     .pipe(gzip())
     .pipe(gulp.dest('dist/js')) //the destination folder
 });
@@ -20,6 +21,7 @@ gulp.task('compass', function() {
       css: 'stylesheets/',
       sass: 'sass/'
     }))
+    .pipe(gulp.dest('dist/css/'))
     .pipe(gzip())
     .pipe(gulp.dest('dist/css/'));
 });
