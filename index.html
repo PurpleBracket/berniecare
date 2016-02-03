@@ -15,7 +15,6 @@
     <meta name="twitter:creator" content="@coders4sanders">
 
     <title>Medicare for All Savings Calculator</title>
-    <!--<link rel="stylesheet" href="dist/css/app.css.gz" charset="utf-8">-->
     <link rel="stylesheet" href="dist/css/app.css" charset="utf-8">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
@@ -69,8 +68,8 @@
         <section id="app">loading...</section>
         <div id="share" class="lg">
           <a class="social">Share!</a>
-          <a onClick="shareTwitter()" class="social"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
-          <a onClick="shareFacebook()" class="social"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
+          <a onClick="shareTwitter()" class="social tw"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+          <a onClick="shareFacebook()" class="social fb"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
         </div>
       </div>
       <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -99,23 +98,23 @@
       <right-block>
         <h4>Built by volunteers</h4>
         <img src="dist/imgs/white-billionaires-2x.png" alt="built buy volunteers, not the billionaires!">
+        <iframe src="http://www.bernrate.com/active" width="200" height="40"></iframe>
       </right-block>
       <left-block>
 
         <a id="contribute" href="https://secure.actblue.com/contribute/page/lets-go-bernie">Contribute</a>
 
-        <a href="https://www.facebook.com/berniesanders" class="social"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
+        <a href="https://www.facebook.com/berniesanders" class="social fb"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
 
-        <a href="https://twitter.com/BernieSanders" class="social"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+        <a href="https://twitter.com/BernieSanders" class="social tw"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
 
-        <a href="https://www.youtube.com/channel/UCH1dpzjCEiGAt8CXkryhkZg" class="social"><svg class="icon icon-youtube"><use xlink:href="#icon-youtube"></use></svg></a>
+        <a href="https://www.youtube.com/channel/UCH1dpzjCEiGAt8CXkryhkZg" class="social yt"><svg class="icon icon-youtube"><use xlink:href="#icon-youtube"></use></svg></a>
 
-        <a href="http://berniesanders.tumblr.com/" class="social"><svg class="icon icon-tumblr"><use xlink:href="#icon-tumblr"></use></svg></a>
+        <a href="http://berniesanders.tumblr.com/" class="social tr"><svg class="icon icon-tumblr"><use xlink:href="#icon-tumblr"></use></svg></a>
 
       </left-block>
     </div>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" charset="utf-8" media="none" onload="if(media!='all')media='all'">
-    <!--<script src="dist/js/serve.js.gz"></script>-->
     <script src="dist/js/serve.js"></script>
     <script type="text/javascript">
       // judge me not for my hacky globals, fellow-travelers
@@ -155,16 +154,18 @@
      }
     </script>
     <script>
-    // i work in a similar way
-      var windowWidth = window.innerWidth,
-          stepifyMobile = function() {
-            if (windowWidth <= 627) { // iP 6s-l
-              $('.step').stepify({
-                  distribution:[1,1,1,1]
-              });
-            }
-          },
-          modalActive = function(e) {
+  var windowWidth = window.innerWidth,
+      stepifyMobile = function() {
+        if (windowWidth <= 627) { // iP 6s-l
+          $('.step').stepify({
+              distribution:[1,1,1,1]
+          });
+        }
+      };
+  $(document).ready(stepifyMobile());
+</script>
+    <script>
+      var modalActive = function(e) {
             if ($(this).hasClass('active')) {
               $(this).children('.info-content').removeClass('active').delay(350).queue(function() {
                 $(this).parent().removeClass('active');
@@ -185,7 +186,6 @@
               });
             }
           };
-      $(document).ready(stepifyMobile());
       $(window).on('click', modalDismiss);
       $('#information').on('click', modalActive);
 

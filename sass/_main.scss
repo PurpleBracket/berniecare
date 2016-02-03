@@ -312,17 +312,28 @@ input {
     }
   }
   right-block{
-    @include set(float, $sm-up: right);
-    @include set(margin-bottom, $sm-up: 1rem, $lg-l-up: 0);
-    @include set(margin-top, $sm-up: 1rem, $lg-l-up: 0);
+    @include set(width, $lg-l-up: 45%);;
+    @media screen and (min-width: 1024px){
+      display: inline-block;
+      margin: 0 2.5%;
+    }
+    iframe{
+      border: none;
+      @include set(float, $sm-up: none, $lg-up: right);
+      @include set(width, $sm-up: 100%, $lg-up: 40%);
+      @include set(padding, $sm-up: 0 25%, $lg-up: 0);
+      @include set(margin, $sm-up: 0 auto, $lg-up: 0);
+      margin-top: 0.5rem !important;
+      display: inline-block;
+    }
 
     h4{
       @include set(float, $lg-up: left);
       @include set(width, $sm-up: 70%, $lg-up: auto);
-      @include set(margin, $sm-up: 0 auto, $lg-up: 0 1rem 0 0);
+      @include set(margin, $sm-up: 0 auto, $lg-up: 0);
       @include set(display, $sm-up: block, $lg-up: inline-block);
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-family: "lora", serif;
       font-weight: 300;
       letter-spacing: 0.01rem;
@@ -334,12 +345,13 @@ input {
     }
     img{
       @include set(float, $lg-up: left);
-      @include set(width, $sm-up: 70%, $lg-up: auto);
-      @include set(height, $sm-up: auto, $lg-up: 2rem);
+      @include set(width, $sm-up: 50%, $lg-up: auto);
+      @include set(height, $sm-up: auto, $lg-up: 1.5rem);
       @include set(margin, $sm-up: 0 auto, $lg-up: 0);
       @include set(display, $sm-up: block, $lg-up: inline-block);
-      margin-top: 0.5rem !important;
-      margin-left: 0.25rem;
+      margin-top: 0.75rem !important;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 

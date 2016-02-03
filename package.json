@@ -27,6 +27,7 @@
     "git-validate": "^2.1.2",
     "glob-promise": "^1.0.4",
     "gulp-gzip": "^1.2.0",
+    "pre-commit": "^1.1.2",
     "standard": "^5.4.1",
     "tape": "^4.4.0",
     "watchify": "^3.6.1"
